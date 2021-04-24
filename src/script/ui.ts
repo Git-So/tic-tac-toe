@@ -22,6 +22,12 @@ export default class UI extends Basic {
   gameThemeIconEl = $("#game-theme g-icon");
   gameRestartIconEl = $("#game-restart g-icon");
 
+  // 状态栏主题色
+  lightThemeColor = "#f2f3f7";
+  darkThemeColor = "#181818";
+  MetaThemeColorEL = $("meta[name=theme-color]");
+  MetaAppleThemeColorEL = $("meta[name=apple-mobile-web-app-status-bar-style]");
+
   // 棋格
   cellArrEl = $$("g-cell");
 
@@ -53,6 +59,18 @@ export default class UI extends Basic {
 
     // 切换主题
     this.htmlEl.setAttribute("theme", is_dark ? "dark" : "light");
+
+    // Chrome主题色切换
+    this.MetaThemeColorEL.setAttribute(
+      "content",
+      is_dark ? "#181818" : "#f2f3f7"
+    );
+
+    // Apple主题色切换
+    this.MetaAppleThemeColorEL.setAttribute(
+      "content",
+      is_dark ? "#181818" : "#f2f3f7"
+    );
 
     // 提示
     this.alert(`切换到${is_dark ? "夜间" : "白天"}模式！`);

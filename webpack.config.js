@@ -18,6 +18,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "井字棋",
+      themeColor: "#f2f3f7",
       template: "src/index.html",
     }),
 
