@@ -63,6 +63,7 @@ g-main {
         padding: 0.8rem;
         flex: 1;
         text-align: center;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
         :active {
           transition-delay: 0s;
