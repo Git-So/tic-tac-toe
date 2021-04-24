@@ -1,0 +1,24 @@
+// 默认主题
+:root,
+:root[theme="light"] {
+  --bg-color: #f2f3f7;
+  --fg-color: #7b7e8c;
+  --box-bg-color: #f8f9fb;
+  --red: #e43030;
+  --green: #19a187;
+  --blue: #367bf0;
+  --box-shadow-inset-1: rgba(0, 0, 0, 0.1);
+  --box-shadow-inset-2: white;
+}
+
+// 夜间主题
+:root[theme="dark"] {
+  --bg-color: #181818;
+  --fg-color: #848173;
+  --box-bg-color: #121212;
+  --red: #b8174c;
+  --green: #19a187;
+  --blue: #265ab1;
+  --box-shadow-inset-1: black;
+  --box-shadow-inset-2: rgba(255, 255, 255, 0.05);
+}

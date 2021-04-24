@@ -1,0 +1,160 @@
+g-icon {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  text-align: left;
+  direction: ltr;
+  width: 1.4rem;
+  height: 1.4rem;
+
+  ::before,
+  ::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+g-icon::before,
+g-icon::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+g-icon[name="true"],
+g-icon[name="false"]::before,
+g-icon[name="false"]::after {
+  @include outside-box-shadow;
+}
+
+/* 图标：日间模式 */
+g-icon[name="light"]::before {
+  border-radius: 50%;
+  background-color: var(--fg-color);
+}
+/* 图标：夜间模式 */
+g-icon[name="dark"]::before {
+  border-radius: 50%;
+  box-shadow: 0.4rem 0.4rem 0 0 var(--fg-color);
+  left: -25%;
+  top: -25%;
+}
+/* 图标：清理棋盘 */
+g-icon[name="restart"] {
+  transform: rotate(30deg);
+  top: -8%;
+
+  &::before {
+    width: 15%;
+    height: 65%;
+    top: -15%;
+    left: 53%;
+    background-color: var(--fg-color);
+  }
+
+  &::after {
+    top: 55%;
+    left: 15%;
+    width: 86%;
+    height: 46%;
+    background-color: var(--fg-color);
+    border-radius: 0.9rem 0.9rem 0 0;
+  }
+}
+
+/* 图标：PVE 模式 */
+g-icon[name="pve"] {
+  border-width: 0.2rem 0.2rem 0.3rem;
+  border-style: solid;
+  border-color: var(--fg-color);
+  border-radius: 0.2rem;
+
+  &::before,
+  &::after {
+    right: 0;
+    left: 0;
+    background-color: var(--fg-color);
+    margin: auto;
+    content: "";
+  }
+  &::before {
+    top: 1.2em;
+    width: 0.6em;
+    height: 0.4em;
+  }
+  &::after {
+    top: 1.6em;
+    width: 1.6em;
+    height: 0.2em;
+  }
+}
+
+/* 图标：PVP 模式 */
+g-icon[name="pvp"],
+g-icon[name="pve"] {
+  width: 2rem;
+  height: 1.4rem;
+  transform: scale(0.8);
+  top: -15%;
+  left: 4%;
+}
+g-icon[name="pvp"]::before {
+  width: 0.9rem;
+  height: 0.9rem;
+  left: 28%;
+  background-color: var(--fg-color);
+  border-radius: 50%;
+}
+g-icon[name="pvp"]::after {
+  top: 70%;
+  left: 5%;
+  width: 1.8rem;
+  height: 1rem;
+  background-color: var(--fg-color);
+  border-radius: 0.9em 0.9em 0 0;
+}
+
+/* 图标：棋子 圈 */
+g-icon[name="true"] {
+  border-radius: 50%;
+  border: solid 0.24rem var(--blue);
+}
+
+/* 图标：棋子 叉 */
+g-icon[name="false"] {
+  transform: rotate(45deg);
+  top: 15%;
+
+  &::before,
+  &::after {
+    width: 100%;
+    height: 0.24rem;
+    background-color: var(--red);
+    border-radius: 0.15em;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+
+// 棋盘兼容处理
+g-cell {
+  g-icon {
+    transform: scale(3.5, 3.5);
+    top: 42%;
+    left: 42%;
+    transition-delay: 0s;
+    transition-duration: 0.1s;
+  }
+  g-icon[name="false"] {
+    transform: rotate(45deg) scale(3.8, 3.8);
+    left: 24%;
+    top: 60%;
+  }
+}

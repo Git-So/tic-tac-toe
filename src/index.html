@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="application-name"
+      content="<%= htmlWebpackPlugin.options.title %>"
+    />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="<%= htmlWebpackPlugin.options.title %>"
+    />
+    <link rel="icon" type="image/png" href="icon/icon.png" />
+    <link rel="apple-touch-icon" type="image/png" href="icon/icon.png" />
+    <link rel="shortcut icon" type="image/png" href="icon/icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      g-main {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <g-main>
+      <!-- 状态栏 -->
+      <g-status-bar>
+        <g-result>
+          <g-label>
+            <g-icon name="true"></g-icon>
+            <g-value id="true-score">0</g-value>
+          </g-label>
+          <g-label>
+            <g-icon name="false"></g-icon>
+            <g-value id="false-score">0</g-value>
+          </g-label>
+        </g-result>
+        <g-setting>
+          <g-button id="game-mode">
+            <g-icon name="pve"></g-icon>
+            <span>人机</span>
+          </g-button>
+          <g-button id="game-theme">
+            <g-icon name="light"></g-icon>
+            <span>主题</span>
+          </g-button>
+          <g-button id="game-restart">
+            <g-icon name="restart"></g-icon>
+            <span>重来</span>
+          </g-button>
+        </g-setting>
+      </g-status-bar>
+      <!-- 棋盘 -->
+      <g-board>
+        <g-row>
+          <g-cell></g-cell>
+          <g-cell></g-cell>
+          <g-cell></g-cell>
+        </g-row>
+        <g-row>
+          <g-cell></g-cell>
+          <g-cell></g-cell>
+          <g-cell></g-cell>
+        </g-row>
+        <g-row>
+          <g-cell></g-cell>
+          <g-cell></g-cell>
+          <g-cell></g-cell>
+        </g-row>
+      </g-board>
+      <g-alert>
+        <span>点击开始游戏，蓝方先手！</span>
+      </g-alert>
+    </g-main>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("sw.js");
+        });
+      }
+    </script>
+  </body>
+</html>

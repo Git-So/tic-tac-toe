@@ -1,0 +1,10 @@
+@mixin inside-box-shadow {
+  box-shadow: 0 0 transparent, 0 0 transparent,
+    inset 0.18rem 0.18rem 0.3rem var(--box-shadow-inset-1),
+    inset -0.18rem -0.18rem 0.3rem var(--box-shadow-inset-2);
+}
+
+@mixin outside-box-shadow {
+  box-shadow: 0.36rem 0.36rem 0.6rem var(--box-shadow-inset-1),
+    -0.36rem -0.36rem 0.6rem var(--box-shadow-inset-2);
+}

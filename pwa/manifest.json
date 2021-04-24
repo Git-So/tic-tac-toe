@@ -1,0 +1,21 @@
+{
+  "name": "井字棋",
+  "short_name": "井字棋",
+  "description": "简但的井字棋游戏",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "icon/icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#F3F3F3",
+  "theme_color": "#F3F3F3",
+  "related_applications": [],
+  "prefer_related_applications": false
+}
