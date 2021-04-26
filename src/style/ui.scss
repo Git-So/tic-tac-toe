@@ -81,13 +81,19 @@ g-main {
 
   //  棋盘
   g-board {
+    width: 100%;
+    max-height: 28rem;
+    height: 94vw;
+
     g-row {
       display: flex;
+      width: 100%;
+      height: calc(100% / 3);
 
       g-cell {
         flex: 1;
-        height: calc((100vw - 2rem) / 3);
-        max-height: calc(25rem / 3);
+        width: calc(100% / 3);
+        height: 100%;
         border-radius: 1rem;
         background: var(--box-bg-color);
       }
