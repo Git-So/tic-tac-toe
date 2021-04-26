@@ -96,6 +96,10 @@ g-main {
         height: 100%;
         border-radius: 1rem;
         background: var(--box-bg-color);
+
+        g-icon {
+          animation: insert 200ms ease-in;
+        }
       }
     }
   }
